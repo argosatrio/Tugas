@@ -1,0 +1,24 @@
+
+CREATE DATABASE postest1;
+CREATE DATABASE
+CREATE TABLE books (PK varchar, id varchar);
+CREATE TABLE
+postest1=# INSERT INTO books VALUES('1','isbn');
+INSERT 0 1
+postest1=# INSERT INTO books VALUES('2','judul');
+INSERT 0 1
+postest1=# INSERT INTO books VALUES('3','sinopsis');
+INSERT 0 1
+postest1=# INSERT INTO books VALUES('4','penulis');
+INSERT 0 1
+postest1=# INSERT INTO books VALUES('5','genre');
+INSERT 0 1
+postest1=# SELECT * FROM books;
+ pk |    id
+----+----------
+ 1  | isbn
+ 2  | judul
+ 3  | sinopsis
+ 4  | penulis
+ 5  | genre
+(5 rows)
