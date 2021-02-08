@@ -1,6 +1,12 @@
 
+/CREATE 
+
 CREATE DATABASE postest2;
 CREATE DATABASE
+
+/CREATE TABLE
+CREATE TABLE book (no serial, id varchar, isbn serial, judul varchar, sinopsis varchar(20), penulis varchar, genre varchar );
+CREATE TABLE
 postest2=# INSERT INTO book VALUES('1','1','123','hangtuah','Lorem ipsum dolor ', 'upin_ipin', 'dongeng');
 INSERT 0 1
 postest2=# INSERT INTO book VALUES('2','2','1234','malinkundang','Lorem ipsum dolor ', 'doraemon', 'dongeng');
@@ -13,6 +19,8 @@ postest2=# INSERT INTO book VALUES('5','5','1234567','anak-anak','Lorem ipsum do
 INSERT 0 1
 postest2=# INSERT INTO book VALUES('6','6','12345678','anak-anak','Lorem ipsum dolor ', 'tamiya', 'dongeng');
 INSERT 0 1
+
+/READ  QUERY TABLE
 postest2=# SELECT * FROM book;
  no | id |   isbn   |      judul      |      sinopsis      |  penulis   |  genre
 ----+----+----------+-----------------+--------------------+------------+---------
@@ -23,3 +31,46 @@ postest2=# SELECT * FROM book;
   5 | 5  |  1234567 | anak-anak       | Lorem ipsum dolor  | teletubies | dongeng
   6 | 6  | 12345678 | anak-anak       | Lorem ipsum dolor  | tamiya     | dongeng
 (6 rows)
+
+
+
+/ UPDATE QUERY TABLE
+postest2=# UPDATE book SET genre = 'cerita_anak' WHERE ID = '1';
+UPDATE 1
+postest2=# UPDATE book SET genre = 'cerita_anak' WHERE ID = '2';
+UPDATE 1
+postest2=# UPDATE book SET genre = 'cerita_anak' WHERE ID = '3';
+UPDATE 1
+postest2=# UPDATE book SET genre = 'cerita_anak' WHERE ID = '4';
+UPDATE 1
+postest2=# UPDATE book SET genre = 'cerita_anak' WHERE ID = '5';
+UPDATE 1
+postest2=# UPDATE book SET genre = 'cerita_anak' WHERE ID = '6';
+UPDATE 1
+postest2=# SELECT * FROM book;
+ no | id |   isbn   |      judul      |      sinopsis      |  penulis   |    genre
+----+----+----------+-----------------+--------------------+------------+-------------
+  1 | 1  |      123 | hangtuah        | Lorem ipsum dolor  | upin_ipin  | cerita_anak
+  2 | 2  |     1234 | malinkundang    | Lorem ipsum dolor  | doraemon   | cerita_anak
+  3 | 3  |    12345 | gunung api      | Lorem ipsum dolor  | dora       | cerita_anak
+  4 | 4  |   123456 | bawahlaut dalam | Lorem ipsum dolor  | spongesbob | cerita_anak
+  5 | 5  |  1234567 | anak-anak       | Lorem ipsum dolor  | teletubies | cerita_anak
+  6 | 6  | 12345678 | anak-anak       | Lorem ipsum dolor  | tamiya     | cerita_anak
+  
+  
+  /DELETE QUERY TABLE
+  
+postest2=# DELETE FROM book  WHERE ID = '6';
+DELETE 1
+postest2=# DELETE FROM book  WHERE ID = '5';
+DELETE 1
+postest2=# DELETE FROM book  WHERE ID = '4';
+DELETE 1
+postest2=# SELECT * FROM book;
+ no | id | isbn  |    judul     |      sinopsis      |  penulis  |    genre
+----+----+-------+--------------+--------------------+-----------+-------------
+  1 | 1  |   123 | hangtuah     | Lorem ipsum dolor  | upin_ipin | cerita_anak
+  2 | 2  |  1234 | malinkundang | Lorem ipsum dolor  | doraemon  | cerita_anak
+  3 | 3  | 12345 | gunung api   | Lorem ipsum dolor  | dora      | cerita_anak
+(3 rows)
+
