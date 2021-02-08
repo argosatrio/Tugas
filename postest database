@@ -1,24 +1,25 @@
 
-CREATE DATABASE postest1;
+CREATE DATABASE postest2;
 CREATE DATABASE
-CREATE TABLE books (PK varchar, id varchar);
-CREATE TABLE
-postest1=# INSERT INTO books VALUES('1','isbn');
+postest2=# INSERT INTO book VALUES('1','1','123','hangtuah','Lorem ipsum dolor ', 'upin_ipin', 'dongeng');
 INSERT 0 1
-postest1=# INSERT INTO books VALUES('2','judul');
+postest2=# INSERT INTO book VALUES('2','2','1234','malinkundang','Lorem ipsum dolor ', 'doraemon', 'dongeng');
 INSERT 0 1
-postest1=# INSERT INTO books VALUES('3','sinopsis');
+postest2=# INSERT INTO book VALUES('3','3','12345','gunung api','Lorem ipsum dolor ', 'dora', 'dongeng');
 INSERT 0 1
-postest1=# INSERT INTO books VALUES('4','penulis');
+postest2=# INSERT INTO book VALUES('4','4','123456','bawahlaut dalam','Lorem ipsum dolor ', 'spongesbob', 'dongeng');
 INSERT 0 1
-postest1=# INSERT INTO books VALUES('5','genre');
+postest2=# INSERT INTO book VALUES('5','5','1234567','anak-anak','Lorem ipsum dolor ', 'teletubies', 'dongeng');
 INSERT 0 1
-postest1=# SELECT * FROM books;
- pk |    id
-----+----------
- 1  | isbn
- 2  | judul
- 3  | sinopsis
- 4  | penulis
- 5  | genre
-(5 rows)
+postest2=# INSERT INTO book VALUES('6','6','12345678','anak-anak','Lorem ipsum dolor ', 'tamiya', 'dongeng');
+INSERT 0 1
+postest2=# SELECT * FROM book;
+ no | id |   isbn   |      judul      |      sinopsis      |  penulis   |  genre
+----+----+----------+-----------------+--------------------+------------+---------
+  1 | 1  |      123 | hangtuah        | Lorem ipsum dolor  | upin_ipin  | dongeng
+  2 | 2  |     1234 | malinkundang    | Lorem ipsum dolor  | doraemon   | dongeng
+  3 | 3  |    12345 | gunung api      | Lorem ipsum dolor  | dora       | dongeng
+  4 | 4  |   123456 | bawahlaut dalam | Lorem ipsum dolor  | spongesbob | dongeng
+  5 | 5  |  1234567 | anak-anak       | Lorem ipsum dolor  | teletubies | dongeng
+  6 | 6  | 12345678 | anak-anak       | Lorem ipsum dolor  | tamiya     | dongeng
+(6 rows)
